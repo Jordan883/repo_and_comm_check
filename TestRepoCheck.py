@@ -28,7 +28,7 @@ class TestRepoCheck(unittest.TestCase):
     def testBlank(self): 
         self.assertEqual(check_repos(''), {'User query  failed; code 404': -1}, '<Blank> should fail to connect with code 404.')
     
-    def testZero(self): 
+    def testTwo(self): 
         self.assertEqual(check_repos(2), {'Input is not a string': -1}, '2 is not a valid input.')
     
     def testDict(self): 
