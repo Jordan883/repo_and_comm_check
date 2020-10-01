@@ -2,9 +2,8 @@
 @author: Jordan Fernandes
 I pledge my honor that I have abided by the Stevens Honor System. - Jordan Fernandes
 
-This file contains a function that takes in a GitHub user ID and outputs the public repos
-from that ID. The number of commits that the user has made to each repo is also listed. This 
-output is structured as a dictionary. 
+This file contains a function that takes in a GitHub user ID and outputs a dictionary containing 
+that user's public repos and the number of commits made to each. 
 '''
 
 # Imports
@@ -16,8 +15,8 @@ except:
 def check_repos(userid):
     ''' Takes in a GitHub User ID as a string, then returns a dictionary containing the name 
     of each public repo that the user has and their numbers of commits. If an error occurs, this 
-    function will return an "error dictionary". This dictionary has one key of an error message and 
-    a value of negative one. 
+    function will return an "error dictionary". This dictionary has one entry: an error message key 
+    with a value of -1. 
 
     Input: A GitHub User ID, as a string. 
     Output: A dictionary containing the name of each public repo that the user has and their 

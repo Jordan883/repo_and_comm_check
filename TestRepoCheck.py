@@ -33,6 +33,9 @@ class TestRepoCheck(unittest.TestCase):
     
     def testDict(self): 
         self.assertEqual(check_repos({'Apple': 1}), {'Input is not a string': -1}, '{\'Apple\': 1} is not a valid input.')
+    
+    def testEmpty(self):
+        self.assertEqual(check_repos('Jordan884'), {}, '\'Jordan884\' should return an empty dictionary.')
 
 if __name__ == '__main__':
     print('Running unit tests')
