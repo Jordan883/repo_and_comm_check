@@ -17,7 +17,7 @@ from RepoCheck import check_repos
 # This code implements the unit test functionality
 # https://docs.python.org/3/library/unittest.html has a nice description of the framework
 
-class TestTriangles(unittest.TestCase):
+class TestRepoCheck(unittest.TestCase):
     # define multiple sets of tests as functions with names that begin
     def testOctocat(self): 
         self.assertEqual(str(check_repos("octocat")),"{'boysenberry-repo-1': 4, 'git-consortium': 6, 'hello-worId': 1, 'Hello-World': 3, 'linguist': 30, 'octocat.github.io': 4, 'Spoon-Knife': 3, 'test-repo1': 1}", 'octocat should return a full list of repos.')
