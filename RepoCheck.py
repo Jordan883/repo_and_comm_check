@@ -17,7 +17,7 @@ def check_repos(userid):
     ''' Takes in a GitHub User ID as a string, then returns a dictionary containing the name 
     of each public repo that the user has and their numbers of commits. If an error occurs, this 
     function will return an "error dictionary". This dictionary has one key of an error message and 
-    a value of zero. 
+    a value of negative one. 
 
     Input: A GitHub User ID, as a string. 
     Output: A dictionary containing the name of each public repo that the user has and their 
@@ -25,7 +25,10 @@ def check_repos(userid):
     '''
     output = {}
 
-    user_r = requests.get('https://api.github.com/users/' + str(userid) + '/repos')
+    if not isinstance(userid, str):
+        return {'Input is not a string': -1}
+
+    user_r = requests.get('https://api.github.com/users/' + userid + '/repos')
     if user_r.status_code != 200:
         return {'User query ' + userid + ' failed; code ' + str(user_r.status_code): -1}
     
